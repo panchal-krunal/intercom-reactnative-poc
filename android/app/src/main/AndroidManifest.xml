@@ -24,5 +24,18 @@
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
       </activity>
+       <!-- START: Add this-->
+    <service
+      android:exported="true"
+      android:name=".MainNotificationService">
+      <intent-filter>
+        <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+      </intent-filter>
+    </service>
+
+    <receiver
+      android:name="com.intercom.reactnative.RNIntercomPushBroadcastReceiver"
+      android:exported="true"/>
+    <!-- END: Add this-->
     </application>
 </manifest>
